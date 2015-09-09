@@ -38,7 +38,7 @@ public class SqlHelper extends SQLiteOpenHelper {
 
     private void createDb(SQLiteDatabase db) {
         db.execSQL("create table contacts " + "(id integer primary key, name text,phone text,email text, street text,place text)");
-        db.execSQL("create table jobs" + "id integer primary key, title text, time text");
+        db.execSQL("create table jobs" + "(id integer primary key, title text, time text)");
     }
 
     //================ All query for jobs ==========================================================
