@@ -19,6 +19,7 @@
 
         <activity android:name=".Contact.DisplayContact"/>
         <activity android:name=".Jobs.DisplayJob"/>
+        <activity android:name=".Jobs.JobEdit"/>
 
     </application>
 

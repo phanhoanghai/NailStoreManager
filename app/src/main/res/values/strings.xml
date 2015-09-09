@@ -21,4 +21,7 @@
     <string name="button_edit"> Edit</string>
     <string name="button_remove"> Remove</string>
     <string name="title"> Title</string>
+    <string name="save_job"> Save </string>
+    <string name="time_job"> Time </string>
+    <string name="edit_job"> Edit </string>
 </resources>

@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -37,7 +39,7 @@ public class DisplayJob extends Activity {
 
         listViewJobs.setAdapter(arrayAdapter);
         listViewJobs.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
+                @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 int id_To_Search = arg2 + 1;
 
@@ -57,4 +59,9 @@ public class DisplayJob extends Activity {
         listViewJobs = (ListView)findViewById(R.id.listViewJobs);
     }
 
+    public void onClickShowJobForm(View v){
+        Toast.makeText(this,"click button", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getApplicationContext(), JobEdit.class);
+        startActivity(intent);
+    }
 }

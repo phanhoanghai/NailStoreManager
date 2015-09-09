@@ -66,11 +66,20 @@ public class SqlHelper extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("select * from jobs", null);
         res.moveToFirst();
 
-        while (!res.isAfterLast()) {
-            array_list.add(res.getString(res.getColumnIndex(Constants.JOBS_TABLE_NAME)));
-            res.moveToNext();
-        }
+//        while (!res.isAfterLast()) {
+//            array_list.add(res.getString(res.getColumnIndex(Constants.JOBS_TABLE_NAME)));
+//            res.moveToNext();
+//        }
         return array_list;
+    }
+
+    public boolean updateJob(Integer id, String title, String time) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Constants.JOBS_COLUMN_TITLE, title);
+        contentValues.put(Constants.JOBS_COLUMN_TIME, time);
+        db.update(Constants.JOBS_TABLE_NAME, contentValues, "id = ? ", new String[]{Integer.toString(id)});
+        return true;
     }
 
     //=============================== All query for Cotact =============================
