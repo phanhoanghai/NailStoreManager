@@ -30,7 +30,7 @@ public class JobEdit extends Activity {
         EditText mTitle   = (EditText)findViewById(R.id.edit_text_job_tile);
         EditText mTime   = (EditText)findViewById(R.id.edit_text_job_time);
         SqlHelper mydb = new SqlHelper(this);
-        mydb.updateJob(id_To_Update, mTitle.getText().toString(), mTime.getText().toString());
+        mydb.insertJobs(mTitle.getText().toString(), mTime.getText().toString());
 
         Intent intent = new Intent(getApplicationContext(), DisplayJob.class);
         startActivity(intent);

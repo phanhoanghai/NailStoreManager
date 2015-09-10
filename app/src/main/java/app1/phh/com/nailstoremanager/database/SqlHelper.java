@@ -61,15 +61,15 @@ public class SqlHelper extends SQLiteOpenHelper {
     public ArrayList<String> getAllJobs() {
         ArrayList<String> array_list = new ArrayList<String>();
 
-
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from jobs", null);
         res.moveToFirst();
 
-//        while (!res.isAfterLast()) {
-//            array_list.add(res.getString(res.getColumnIndex(Constants.JOBS_TABLE_NAME)));
-//            res.moveToNext();
-//        }
+        while (!res.isAfterLast()) {
+            array_list.add(res.getString(res.getColumnIndex(Constants.JOBS_COLUMN_TITLE)));
+            res.moveToNext();
+        }
+
         return array_list;
     }
 
